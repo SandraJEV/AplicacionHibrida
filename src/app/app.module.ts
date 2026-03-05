@@ -10,9 +10,6 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { initializeApp } from 'firebase/app';
-
-initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [AppComponent],

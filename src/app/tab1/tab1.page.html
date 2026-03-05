@@ -6,7 +6,7 @@
 
 <ion-content>
 
-  <div *ngFor="let noticia of noticias">
+  <div *ngFor="let noticia of noticias; let i = index">
 
     <ion-card class="card-noticia">
 
@@ -19,7 +19,7 @@
 
         <p>{{ noticia.descripcion }}</p>
 
-        <ion-button size="small" color="danger">
+        <ion-button size="small" color="danger" (click)="eliminarNoticia(i)">
           Eliminar
         </ion-button>
 
