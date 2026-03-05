@@ -35,3 +35,27 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+ion-input, ion-textarea {
+  color: white;
+}
+ion-input input,
+ion-textarea textarea {
+  pointer-events: auto !important;
+  user-select: auto !important;
+}
+
+ion-content {
+  pointer-events: auto;
+}
+
+/* Ensure interactive content sits above router outlet so inputs receive events */
+ion-router-outlet.hydrated {
+  z-index: 0;
+}
+
+ion-content {
+  position: relative;
+  z-index: 1;
+}

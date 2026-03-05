@@ -1,0 +1,31 @@
+.card-noticia {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.card-noticia img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.contenido-noticia {
+  flex: 1;
+}
+
+.contenido-noticia h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.fecha {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.contenido-noticia p {
+  font-size: 14px;
+}     

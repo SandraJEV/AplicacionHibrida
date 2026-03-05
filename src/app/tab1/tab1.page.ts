@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NoticiasService } from '../services/noticias';
 
 @Component({
   selector: 'app-tab1',
@@ -6,8 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss'],
   standalone: false,
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
-  constructor() {}
+  noticias:any[] = [];
+
+  constructor(private noticiasService: NoticiasService) {}
+
+  ngOnInit(){
+
+    this.noticiasService.obtenerNoticias().subscribe(data=>{
+      this.noticias = data;
+      console.log(this.noticias);
+    });
+
+  }
 
 }

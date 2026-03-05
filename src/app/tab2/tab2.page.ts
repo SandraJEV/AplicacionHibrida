@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NoticiasService } from '../services/noticias';
 
 @Component({
   selector: 'app-tab2',
@@ -8,6 +9,26 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  titulo = "";
+  fecha = "";
+  descripcion = "";
+
+  constructor(private noticiasService: NoticiasService) {}
+
+  guardarNoticia(){
+
+    const nuevaNoticia = {
+      titulo: this.titulo,
+      fecha: this.fecha,
+      descripcion: this.descripcion
+    };
+
+    this.noticiasService.agregarNoticia(nuevaNoticia);
+
+    this.titulo = "";
+    this.fecha = "";
+    this.descripcion = "";
+
+  }
 
 }
